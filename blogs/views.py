@@ -1,12 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-# Pages setting
+# Index
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'index.html',  {'hi': 'Hello Django!'}, content_type='text/html')
 
-# About Templates
+# About
 def about(request):
- return render(request, 'about.html', {  'hi': 'Hello Django',}, content_type='text/html')
+    return render(request, 'about.html', content_type='text/html')
       
     
