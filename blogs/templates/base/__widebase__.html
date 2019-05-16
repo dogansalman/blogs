@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% include "__vendor__" %}
+        <title>{% block title %} {% endblock %}</title>
+    </head>
+    <body>
+            <div class="basic">{% include "base/__nav__.html" %}</div>
+            <div class="container">
+                    <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    {% block content %}{% endblock %}
+                            </div>
+                        </div>
+            </div>
+    </body>
+</html>

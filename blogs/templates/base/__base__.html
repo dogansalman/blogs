@@ -3,19 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-        <link rel="stylesheet" href="{% static 'css/theme.css' %}">
-        <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
-        <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
-
-        <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
-        <script src="{% static 'js/bootstrap.min.js' %}"></script>
-
+        {% include "__vendor__" %}
         <title>{% block title %} {% endblock %}</title>
     </head>
     <body>
-            <div class="basic">{% include "__nav__.html" %}</div>
+            <div class="basic">{% include "base/__nav__.html" %}</div>
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
@@ -24,7 +16,6 @@
                     <div class="d-none d-sm-block d-xs-block col-md-4 col-lg-3">
                         {% include "categories.html" %}
                     </div>
-                 
                 </div>
             </div>
     </body>

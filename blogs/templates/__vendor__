@@ -3,9 +3,12 @@
 <link rel="stylesheet" href="{% static 'css/theme.css' %}">
 <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
 <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+<link rel="stylesheet" href="{% static 'css/summernote.css' %}">
 
 <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/summernote-bs4.js' %}"></script>
 
 {% block content %}{% endblock %}
 
