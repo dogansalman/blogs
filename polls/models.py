@@ -11,10 +11,10 @@ class blogs(models.Model):
     comment_auto_approve = models.BooleanField(default=False)
     
 # Blog post models
-class blogPost(models.Model):
+class blogpost(models.Model):
     title = models.CharField(max_length=255)
     is_allow_comments = models.BooleanField(default=False)
-    content: models.CharField
+    content = models.TextField
     created_date = models.DateField
 
 # Comments
@@ -23,6 +23,3 @@ class comments(models.Model):
     fullname = models.CharField(max_length = 255)
     comment = models.CharField(max_length=600)
     created_date = models.DateField
-
-
-

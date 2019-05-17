@@ -40,7 +40,7 @@ Yukarıdaki komut ile polls dizinin oluştuğunu göreceksiniz. Burda model view
 ### Settings.py
 ```sh
 INSTALLED_APPS = [
-    'blogs.polls.PollsConfig',
+    'polls.apps.PollsConfig',
     ...
     ...
     ...
@@ -76,5 +76,33 @@ urlpatterns += staticfiles_urlpatterns()
 ```sh
 # Aşağıdaki komut ile static dosyaları static_URL ile belirttiğimiz dizine çıktısını alalım.
 python manage.py collecstatic
+
+```
+
+
+### Migrations
+```sh
+# startapp polls 
+# polls/apps.py >  name = 'polls'
+INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
+    .....
+]
+$ python manage.py makemigrations {polls}
+$ python manage.py migrate 
+
+```
+
+
+
+### Shell Python
+```sh
+# Kayıtları kontrol etmek için python shell kullanabilir veya sqlite cli ile veri kontrolü sağlayabilirsiniz.
+$ python manage.py shell
+$ from polls.models import blogpost
+# Tüm kayıtların değerlerini listeler index belirterek istediğiniz kayda erişebilirsiniz.
+$ blogpost.objects.all().values()[0,1,2....]
+# id = 1
+$ blogpost.objects.get(id=1)
 
 ```

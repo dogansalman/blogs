@@ -3,7 +3,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from datetime import datetime
 from django.db import transaction
-from polls.models import blogPost
+from polls.models import blogpost
+import html
 
 # Index
 def index(request):
@@ -33,12 +34,14 @@ def posts(request):
 def post(request):
   #POST
     if(request.method=='POST'):
-      p = blogPost()
+
+      p = blogpost()
       p.title = request.POST['title']
-      p.created_date = True
-      p.is_allow_comments = True
-      p.content = request.POST['content']
+      p.created_date = datetime.now()
+      p.is_allow_comments = True if "is_allow_comments" in request.POST else False
+      p.content = html.escape(request.POST['content'])
       p.save()
+
       return redirect('/post/')
     #GET
     return render(request, 'admin/post.html', {'date': datetime.now()}, content_type='text/html')  
