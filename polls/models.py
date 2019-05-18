@@ -14,7 +14,7 @@ class blogs(models.Model):
 class blogpost(models.Model):
     title = models.CharField(max_length=255)
     is_allow_comments = models.BooleanField(default=False)
-    content = models.TextField
+    content = models.TextField()
     created_date = models.DateField
 
 # Comments
