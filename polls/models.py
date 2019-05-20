@@ -15,11 +15,20 @@ class blogpost(models.Model):
     title = models.CharField(max_length=255)
     is_allow_comments = models.BooleanField(default=False)
     content = models.TextField()
-    created_date = models.DateField
-
+    created_date = models.DateTimeField(auto_now_add=True)
+    modify_date = models.DateTimeField(auto_now=True)
+    keywords = models.CharField(max_length=255)
+    categories = models.CharField(max_length=255)
 # Comments
 class comments(models.Model):
     email = models.CharField(max_length=255)
     fullname = models.CharField(max_length = 255)
     comment = models.CharField(max_length=600)
-    created_date = models.DateField
+    created_date = models.DateTimeField(auto_now_add=True)
+    modify_date = models.DateTimeField(auto_now=True)
+    blog_id = models.IntegerField(blank=False, null=False)
+# Categories
+class categories(models.Model):
+    name = models.CharField(max_length=255)
+    created_date = models.DateTimeField(auto_now_add=True)
+    modify_date = models.DateTimeField(auto_now=True)
